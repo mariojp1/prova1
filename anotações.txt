@@ -1,0 +1,68 @@
+DIP TarefaService.java:
+
+ITarefaPersistence
+TarefaPersistence
+TarefaService
+
+
+Builder TarefaJava:
+
+Tarefa
+
+
+Aberto / Fechado:
+
+Persistencia
+ResponsavelPersistence
+TarefaPersistence
+
+
+
+1- No código atual, a classe TarefaService instancia diretamente um objeto TarefaPersistence, o que viola o Princípio da Inversão de Dependência (DIP) do SOLID. Para aderir ao DIP e tornar o código mais testável e mantível, você decide refatorar a classe TarefaService. *
+Ao refatorar a classe TarefaService para seguir o Princípio da Inversão de Dependência, quais das seguintes ações você deve realizar? (Selecione todas as alternativas corretas.)
+
+Criar uma interface para TarefaPersistence, por exemplo, ITarefaPersistence. V
+
+Fazer com que Tarefa Persistence implemente a interface ITarefaPersistence. V
+
+Modificar TarefaService para implementar a interface ITarefaPersistence.
+
+Injetar a dependência ITarefaPersistence em TarefaService via injeção de construtor ou setter. V
+
+Manter a instanciação direta de TarefaPersistence em TarefaService para simplicidade.
+
+
+
+
+2- A classe Tarefa possui múltiplos construtores e métodos setters, o que pode permitir que ela esteja em um estado inconsistente. Para aderir ao padrão de projeto Builder dos padrões GOF e melhorar a criação de objetos, você decide refatorar a classe Tarefa. *
+
+Tarefas:
+Refatore a classe Tarefa para implementar o padrão Builder.
+Quais das seguintes ações você deve realizar? (Selecione todas as alternativas corretas.)
+
+Implementar uma classe Builder e herdar de Tarefa.
+
+Remover todos os setters da classe Tarefa para torná-la imutável. V
+
+Usar encadeamento de métodos na classe Builder para definir as propriedades. V
+
+Fornecer um método build() na classe Builder que retorna uma instância de Tarefa. V
+
+Criar diferentes construtores para classe Tarefa.
+
+
+
+
+3- As classes TarefaPersistence e ResponsavelPersistence possuem métodos similares para acesso a dados, mas não compartilham uma interface ou superclasse comum. Para aderir aos princípios SOLID, especificamente o Princípio Aberto/Fechado, você deve refatorar essas classes.
+
+Quais das seguintes ações você deve realizar como parte dessa refatoração? (Selecione todas as alternativas corretas.)
+
+Criar uma interface genérica Persistencia<T> definindo métodos CRUD comuns. V
+
+Fazer com que Tarefa Persistence e Responsavel Persistence implementem a interface Persistencia<T>. V
+
+Usar Generics em Java para parametrizar a interface Persistencia e suas implementações. V
+
+Mesclar TarefaPersistence e ResponsavelPersistence em uma única classe.
+
+Garantir que cada classe de persistência esteja aberta para modificação, mas fechada para extensão.
