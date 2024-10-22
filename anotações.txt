@@ -13,7 +13,7 @@ Tarefa
 Aberto / Fechado:
 
 Persistencia
-ResponsavelPersistence
+ResponsavelPersistenceum <tarefa>
 TarefaPersistence
 
 
